@@ -9,4 +9,19 @@ services:
     ports:
       - 5000:5000
     volumes:
-     - ./app:/code/app
+     - ./src:/src
+    
+  database:
+    container_name: postgresql
+    image: postgres:alpine3.20
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "example"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "password"
+
+volumes:
+  postgres_data:

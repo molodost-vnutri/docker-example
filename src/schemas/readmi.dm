@@ -1,0 +1,1 @@
+Структура payload'a при rout'e
